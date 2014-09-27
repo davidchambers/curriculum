@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="assets/reveal.js/css/reveal.css">
   <link rel="stylesheet" href="assets/mozilla-theme.css" id=
   "theme">
-  <link rel="stylesheet" href=
-  "assets/reveal.js/plugin/highlight/github.min.css">
+  <link rel="stylesheet" href="assets/prism.css">
+  <script src="assets/prism.js"></script>
+  <script src="assets/prism.clojure.js"></script>
 </head>
 
 <body>
@@ -54,7 +55,7 @@
           <h3 class="slide-title slide">What does Clojure look
           like?</h3>
           <pre>
-<code>(+ 3 4)
+<code class="language-clojure">(+ 3 4)
 (max 8 17 2)
 (eat "sandwich")</code></pre>
         </section>
@@ -62,7 +63,7 @@
         <section>
           <h3 class="slide-title slide">Comments</h3>
           <pre>
-<code>;; more food code
+<code class="language-clojure">;; more food code
 (eat "cookie") ; nom nom nom
 (eat "donut") ; mmm donuts</code></pre>
         </section>
@@ -109,7 +110,7 @@
         <section>
           <h3 class="slide-title slide">Numbers</h3>
           <pre>
-<code>;; integers
+<code class="language-clojure">;; integers
 12
 -42
 
@@ -125,7 +126,7 @@
         <section>
           <h3 class="slide-title slide">Arithmetic</h3>
           <pre>
-<code>(+ 1 1)  ;=&gt; 1 + 1 = 2
+<code class="language-clojure">(+ 1 1)  ;=&gt; 1 + 1 = 2
 (- 12 4) ;=&gt; 12 - 4 = 8
 (* 13 2) ;=&gt; 13 * 2 = 26
 (/ 27 9) ;=&gt; 27 / 9 = 3</code></pre>
@@ -135,28 +136,24 @@
           <h3 class="slide-title slide">Infix vs. prefix
           notation</h3>
 
-          <div style="text-align: left">
-            Infix: <code>1 + 2 * 3 / 4 - 5</code>
-          </div>
+          <pre><code class="language-javascript">// infix
+1 + 2 * 3 / 4 - 5</code></pre>
 
-          <div style="text-align: left">
-            Prefix: <code>(- (+ 1 (/ (* 2 3) 4)) 5)</code>
-          </div>
+          <pre><code class="language-clojure">;; prefix
+(- (+ 1 (/ (* 2 3) 4)) 5)</code></pre>
 
-          <div style="text-align: left">
-            Infix: <code>1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9</code>
-          </div>
+          <pre><code class="language-javascript">// infix
+1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9</code></pre>
 
-          <div style="text-align: left">
-            Prefix: <code>(+ 1 2 3 4 5 6 7 8 9)</code>
-          </div>
+          <pre><code class="language-clojure">;; prefix
+(+ 1 2 3 4 5 6 7 8 9)</code></pre>
         </section>
 
         <section>
           <h3 class="slide-title slide">Arithmetic with all number
           types</h3>
           <pre>
-<code>(+ 4/3 7/8)    ;=&gt; 53/24
+<code class="language-clojure">(+ 4/3 7/8)    ;=&gt; 53/24
 (- 9 4.2 1/2)  ;=&gt; 4.3
 (* 8 1/4)      ;=&gt; 2
 (/ 27/2 1.5)   ;=&gt; 3.0</code></pre>
@@ -168,7 +165,7 @@
 
           <p>String examples</p>
           <pre>
-<code>"Salut tout le monde"
+<code class="language-clojure">"Salut tout le monde"
 "Prost!"</code></pre>
 
           <p>Keyword examples</p>
@@ -191,7 +188,7 @@ false</code></pre>
         <section>
           <h3 class="slide-title slide">def</h3>
           <pre>
-<code>(def mangoes 3)
+<code class="language-clojure">(def mangoes 3)
 (def oranges 5)
 (+ mangoes oranges)</code></pre>
         </section>
@@ -234,9 +231,6 @@ Reveal.initialize({
     dependencies: [
     {src: "assets/reveal.js/plugin/markdown/marked.js"},
     {src: "assets/reveal.js/plugin/markdown/markdown.js"},
-    {src: "assets/reveal.js/plugin/highlight/highlight.js",
-     async: true,
-     callback: function () { hljs.initHighlightingOnLoad() }},
     {src: "assets/reveal.js/plugin/notes/notes.js"}
   ]});
   </script>
